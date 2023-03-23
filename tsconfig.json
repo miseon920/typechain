@@ -1,0 +1,20 @@
+{
+    "include": ["src"], //src에 있는 모든타입스크립트파일
+    "compilerOptions": { //자바스크립트로 컴파일하기
+        "outDir": "build",  //자바스크립트파일이 생성될 위치(폴더)
+        "target": "ES6", //어떤버전의 자스로 컴파일할것인지
+        "lib": ["ES6"], //합쳐진 라이브러리의 정의 파일을 특정해줌
+        //실제 이프로젝트는 서버에서만 작동함
+        /*
+            "lib": ["ES6","DOM"] 은 ES6을 지원하는서버와 브라우저환경에서 코드를 실행하라는 뜻
+            이로인해서 개발자가 사용할 api를 알려줌
+        */
+        "strict": true, //모든 엄격한 타입 검사 옵션을 활성화
+        "allowJs": true, //타입스크립트 안에서 자스를 허용한다는 의미
+        "esModuleInterop": true, //이렇게 안적으면 import 할때 * as 모듈이름 으로 적어야함
+        "module": "CommonJS", //브라우저 앱을 만들경우에는 umd를 선택
+    }
+}
+
+//https://www.typescriptlang.org/tsconfig#target
+//주로 프레임워크를 쓰므로 이파일을 수정할 일은 거의 없다. - 보통 웹팩을 사용하여 그 웹팩은 타입스크립트를 사용한다.
